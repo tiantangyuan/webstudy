@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+   var div = document.createElement('div');
+   var p = document.createElement('p');
+   div.setAttribute('class','example');
+   p.setAttribute('class','slogan');
+   var text = document.createTextNode('最帅');
+   p.appendChild(text);
+   div.appendChild(p);
+   document.body.appendChild(div);
+</script>
+    <script type="text/javascript">
+        //日期对象，是系统提供好的
+        //时间戳
+        var firstTime = new Date().getTime();
+        for(var i=0;i<100000000; i++) {
+
+        }
+        var lastTime = new Date().getTime();
+        console.log(lastTime - firstTime);
+        var date = new Date();
+    </script>
+    <script>
+        //定时器
+        setInterval(fuction(){
+            
+        },1000);
+    </script>
+    
+</body>
+</html>

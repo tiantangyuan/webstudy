@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        用户名：<input type="text" name="userName"><br>
+        密码：<input type="password" name="userPassword"><br>
+        邮箱：<input type="email"><br>
+        <!-- tel它并不是来实现验证。它的本质目的是为了能够在移动端打开数字键盘，
+        意味着数字键盘限制用户只能输入数字。查看效果需要使用手机浏览器 -->
+        电话：<input type="tel"><br>
+        <!-- 验证只能输入合法的网址：必须包含http:// -->
+        网址：<input type="url"><br>
+        <!-- number: 只能输入数字(包含小数点)，不能输入其它的字符
+        max:最大值
+        min:最小值
+        value:默认值 -->
+        数量：<input type="number"><br>
+        <!-- seach: 可以提供更人性化的输入体验 -->
+        请输入商品名称：<input type="search"><br>
+        范围：<input type="range" max="100" min="0" value="50"><br>
+        颜色：<input type="color"><br>
+        <!-- 时间相关 -->
+        <!-- time：时间：时分秒 -->
+        时间：<input type="time"><br>
+        <!-- date：日期：年月日 -->
+        日期：<input type="date"><br>
+        <!-- datetime：大多数浏览器不能支持datetime，只有safari支持 -->
+        日期时间：<input type="datetime"><br>
+        日期时间：<input type="datetime-local"><br>
+        月份：<input type="month"><br>
+        星期：<input type="week"><br>
+        
+         <!-- placeholder:提示文本，提示占位 -->
+         <!-- autofocus:自动获取焦点 -->
+         <!-- autocomplete：自动完成：on：打开 off：关闭
+         1.必须成功提交过
+         2.当前添加autocomplete的元素必须要有name属性 -->
+        登录名： <input type="text" placeholder="请输入登录名" autofocus
+        autocapitalize="on"><br>
+        <!-- required:必须输入，如果没有输入则会阻止当前数据提交 -->
+        <!-- pattern：正则表达式验证
+        *：代表任意个；
+        ？：代表0个或1个
+        +：代表1个或者多个 -->
+         手机号：<input type="text" name="photo"><br>
+         <!-- multiple：可以选择多个文件 -->
+        文件： <input type="file" name="photo" multiple><br>
+        <!-- email: 有默认验证  在email中，multiple允许输入多个邮箱地址，以逗号分隔 -->
+         邮箱：<input type="email" name="email" multiple><br>
+
+         <!-- 提交 -->
+        <input type="submit"><br>
+    </form>
+    <!-- 下面这个表单元素并没有包含在form中：默认情况下面表单元素的数据不会进行提交 -->
+    <!-- form：指定表单id，那么在将来指定id号的表单进行数据提交的时候，也会将
+        当前表单元素的数据一起提交 -->
+    地址：<input type="text" name="address" form="myForm">
+</body>
+</html>

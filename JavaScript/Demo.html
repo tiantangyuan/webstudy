@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        input{
+            border:1px solid rgba(0, 0, 0, 0);
+            text-align: right;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    minutes:<input type="text" value="0">
+    seconds:<input type="text" value="0">
+   <!-- <script type="text/javascript">
+       //计时3分钟
+       var minutesNode = document.getElementByTagName('input')[0];
+       var secondsNode = document.getElementByTagName('input')[1];
+       
+
+   </script> -->
+    <!-- <script type="text/javascript">
+        //循环计时器
+        var fisrtTime = new Date().getTime();
+        setInterval( function () {
+            var lastTime = new Date().getTime();
+            console.log(lastTime-fisrtTime);
+            firstTime = lastTime;
+
+        }, 1000);
+    </script> -->
+   
+    <!-- <script type="text/javascript">
+           //clearInterval();
+        var i=0;
+        var timer = setInterval(function(){
+            console.log(i++);
+            if(i>10){
+                clearInterval(timer);
+            }
+        },10);
+        
+    
+    </script> -->
+    <!-- <script>
+        //查看滚动条的滚动距离
+            //window.pageXOffset/pageYOffset
+            //IE8和IE8以下的浏览器
+                //document.body.scrollLef/Top ie8 ie5 ie4
+                //document.documentElement.scorllLeft/Top ie7 ie6
+                //兼容性比较混乱用时，取两个值相加，因为不可能存在两个同时有值
+                //document.body + document.documentElement.scrollLeft 
+                function getScrollOffset(){
+                    if(window.pageXOffset){
+                        return {
+                            x : window.pageXOffset,
+                            y : window.pageYOffset
+                        }
+                    }else{
+                        return{
+                            x : document.body.scrollLeft + document.documentElement.scroollLeft,
+                            y : document.body.scrollTop + document.documentElement.scrollTop
+                        }
+                    }
+                }
+    </script> -->
+    <!-- <script type="text/javascript">
+        function getViewportOffset(){
+           if(window.innerWidth) {
+                return {
+                    w : window.innerWdith,
+                    h : window.innerHeight
+                }
+            }else{
+                if(document.compatMode === "BackCompat"){
+                    return{
+                        w : document.body.clientWidth,
+                        h : document.body.clientHeight
+                    }
+                }else{
+                    return{
+                        w : document.documentElement.clientWidth,
+                        h : document.documentElement.clientHeight
+                    }
+                }
+            }
+        }
+        
+    </script> -->
+    <!-- <div style="padding: 100px; width: 100px;height: 100px;background-color: red;position: absolute;left: 100px;top: 100px;"></div> -->
+ <!-- <div style="padding: 100px; width: 100px;height: 100px;background-color:
+  red; position: absolute;left: 100px;top: 100px;"></div>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+</script> -->
+<!-- 封装兼容性方法getStyle -->
+<!-- <script>
+    function getStyle(elem,prop){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(elem,null)[prop];
+        }else{
+            return elem.currentStyle[prop];
+        }
+    }
+</script> -->
+
+<!-- 方块运动 -->
+<div style="width: 100px;height: 100px;background-color: red;
+position:absolute;"></div>
+<script type="text/javascript">
+    function getStyle(elem,prop){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(elem,null)[prop];
+        }else{
+            return elem.currentStyle[prop];
+        }
+    }
+    var div = document.getElementsByTagName('div')[0];
+    var speed = 1;
+    var timer = setInterval(function(){
+        speed += speed/7;
+        div.style.left = parseInt(getStyle(div, 'left')) + speed + 'px';
+        if(parseInt(div.style.left)>500){
+            clearInterval(timer);
+        }
+    },60);
+</script>
+</body>
+</html>
