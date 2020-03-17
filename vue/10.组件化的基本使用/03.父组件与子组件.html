@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <cpn2></cpn2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 1.创建第一个组件构造器
+      const cpnCone = Vue.extend({
+        template: `
+        <div >
+          <h2>我是标题one</h2>
+          <p>我是第一行内容</p>
+          <p>I'm the second line</p>
+        </div>
+        `
+      });
+
+      // 2.创建第二个组件构造器
+      const cpnCtwo = Vue.extend({
+        template: `
+        <div >
+          <cpn1></cpn1>
+          <h2>我是标题two</h2>
+          <p>我是第一行内容</p>
+          <p>I'm the second line</p>
+        </div>
+        `,
+        components: {
+          cpn1: cpnCone
+        }
+      });
+
+      // 疑问: 怎么注册的组件才是局部组件呢?
+      // 挂载在Vue实例下面
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好啊"
+        },
+        // 局部组件
+        components: {
+          cpn2: cpnCtwo
+        }
+      });
+    </script>
+  </body>
+</html>

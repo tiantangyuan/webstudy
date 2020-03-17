@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <my-cpn></my-cpn>
+      <cpn></cpn>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 1.全局组件注册的语法糖
+      Vue.component("my-cpn", {
+        template: `
+      <div >
+        <h2>我是标题one</h2>
+        <p>我是第一行内容,耶耶</p>
+        <p>I'm the second line</p>
+      </div>
+      `
+      });
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好啊"
+        },
+        // 局部组件
+        components: {
+          cpn: {
+            template: `
+            <div >
+              <h2>我是标题one</h2>
+                <p>我是第一行内容,哈哈</p>
+                <p>I'm the second line</p>
+            </div>
+            `
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

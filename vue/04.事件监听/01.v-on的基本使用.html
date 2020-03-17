@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div id="app">
+  <h2>{{counter}}</h2>
+  <button v-on:click ="increment">+</button>
+  <button v-on:click ="decement">-</button><br> -->
+  <!-- 语法糖 -->
+  <!-- <button @click="increment">+</button>
+  <button @click="decement">-</button>
+  </div> -->
+<!-- ------------------------------------------------------------- -->
+
+<div id="app">
+  <!-- 1. .stop修饰符的使用 -->
+  <div @click="divClick">
+    aaaaaa
+    <button @click.stop="btnClick">按钮</button>
+  </div>
+
+  <!-- 2. .prevent修饰符的使用 -->
+  <br>
+  <form action="baidu">
+    <input type="submit" value="提交" @click.prevent="submitClick">
+  </form>
+
+<!-- --------------------------------------------------------- -->
+<!-- 3. .监听某个键盘的键帽 -->
+<input type="text" @keyup="keyUp">
+
+
+
+</div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    // const app = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     counter: 0
+    //   },
+    //   methods: {
+    //     increment(){
+    //       this.counter++
+    //     },
+    //     decement(){
+    //       this.counter--
+    //     }
+    //   }
+    // })
+    // ------------------------------------------------- 
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+      },
+      methods:{
+        btnClick(){
+          console.log("btnClick");
+        },
+        divClick(){
+          console.log("divClick");
+        },
+        submitClick(){
+          console.log('submitClick');
+        },
+        keyUp(){
+          console.log('keyUp');
+        }
+      }
+    })
+
+
+  </script>
+</body>
+</html>
