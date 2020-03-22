@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <test><span slot="left">1</span></test>
+      <test><span slot="center">2</span></test>
+      <test><span slot="right">3</span></test>
+    </div>
+    <template id="test">
+      <div>
+        <slot name="left"><span>左边</span></slot>
+        <slot name="center"><span>中间</span></slot>
+        <slot name="right"><span>右边</span></slot>
+      </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好"
+        },
+        components: {
+          test: {
+            template: "#test"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
